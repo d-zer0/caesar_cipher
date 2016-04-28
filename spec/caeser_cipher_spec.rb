@@ -1,5 +1,4 @@
-require './spec_helper'
-require '../caesar_cipher'
+require 'caesar_cipher'
 
 describe 'add' do
 	it 'adds two passed numbers' do
