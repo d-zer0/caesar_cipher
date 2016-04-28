@@ -22,6 +22,10 @@ describe 'encrypt' do
 		expect(encrypt('aaa bbb ccc', 1)).to eq('bbb ccc ddd')
 	end
 
+	it 'keeps chars as letters and retains case' do
+		expect(encrypt('xyz', 3)).to eq('abc')
+	end
+
 	it 'shifts by a large number' do
 		expect(encrypt('abc de fg', 2601)).to eq('bcd ef gh')
 	end
