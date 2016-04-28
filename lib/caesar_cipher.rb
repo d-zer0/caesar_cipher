@@ -5,6 +5,7 @@
 
 def encrypt (text, shift)
 
+	shift = (shift % 26)
 	i = 0
 	text = text.split(//)
 
@@ -22,7 +23,7 @@ def encrypt (text, shift)
 			
 
 			if (letter == "upcase") && ((text[i] + shift) > 90) || (letter == "downcase") && ((text[i] + shift) > 122) # check shift keeps char within case range
-				shift = (shift % 26) - 26 # find remainder of shift after each full loop through alphabet
+				shift -= 26 # find remainder of shift after each full loop through alphabet
 			end
 			
 

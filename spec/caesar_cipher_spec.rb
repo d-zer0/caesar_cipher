@@ -27,7 +27,7 @@ describe 'encrypt' do
 	end
 
 	it 'shifts by a large number' do
-		expect(encrypt('abc de fg', 2601)).to eq('bcd ef gh')
+		expect(encrypt('Hello, my name is Daniel.', 933295)).to eq('Gdkkn, lx mzld hr Czmhdk.')
 	end
 
 end
