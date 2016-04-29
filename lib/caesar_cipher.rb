@@ -3,7 +3,7 @@ def encrypt (text, shift)
 	# gets remainder of shift after all full loops through alphabet considered
 	shift = (shift % 26)
 	
-	# counter
+	# counter to move through array
 	i = 0
 
 	# splits input text into an array of it's characters
@@ -28,14 +28,14 @@ def encrypt (text, shift)
 		if (letter == "upcase") || (letter == "downcase")
 			text[i] = text[i].ord # convert char to ascii value		
 
-			# stops char shifting beyond 'Z' or 'z'
+			# checks if char will be shifted beyond 'Z' or 'z'
 			if (letter == "upcase") && ((text[i] + shift) > 90) || (letter == "downcase") && ((text[i] + shift) > 122)
-				# find remainder of shift after each full loop through alphabet
+				# calculates how to get to correct letter without going beyond A-Z/a-z boundaries
 				shift = (shift - 26)
 
-			# stops char shifting backwards beyond 'A' or 'A'
+			# checks if char will be shifted backwards beyond 'A' or 'a'
 			elsif (letter == "upcase") && ((text[i] + shift) < 65) || (letter == "downcase") && ((text[i] + shift) < 97)
-				# find remainder of shift after each full loop through alphabet
+				# calculates how to get to correct letter without going beyond A-Z/a-z boundaries
 				shift = (shift + 26)
 			end	
 
@@ -44,11 +44,14 @@ def encrypt (text, shift)
 		
 		end
 
-		# adds 1 to count
+		# changes value of i in text[i] for next loop
 		i += 1
 
 	end.join('') # converts array back to string
 end
+
+
+# Remove comments below to test this using command line
 
 =begin
 
